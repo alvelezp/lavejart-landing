@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LAVEJART · Portafolio de Laura Vélez Jaramillo</title>
+  <meta name="description" content="Portafolio de LAVEJART">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Static background: removed animated layers -->
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-text">
+        <img src="img/logo-principal.png" alt="LAVEJART" class="logo" />
+        <p class="subtitle">Portafolio de <strong>Laura Vélez Jaramillo</strong></p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#portafolio" class="pill">Portafolio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="principal">
+    <section class="hero">
+      <h2>Caminante exploradora de memorias</h2>
+      <p>¿Qué será el arte ? </p>
+      <p>¿Será todo lo que se puede percibir? <p>
+      <a href="#portafolio" class="btn">Ver obras</a>
+    </section>
+
+    <section id="sobre-mi" class="about card">
+      <div class="about-grid">
+        <div>
+          <h3>Sobre mí</h3>
+          <p>Soy Laura Vélez Jaramillo, artista detrás de <strong>LAVEJART</strong>. Exploro la ilustración, el collage y el lettering para contar historias visuales con una estética lúdica.</p>
+          <p class="tags"><span>Ilustración</span><span>Lettering</span><span>Fotografía</span><span>Exploración</span><span>Diseño</span></p>
+        </div>
+        <figure class="iso">
+          <img src="img/laura.png" alt="Foto de Laura Vélez Jaramillo">
+        </figure>
+      </div>
+    </section>
+
+    <section id="portafolio" class="portfolio">
+      <h3 class="section-title">Portafolio</h3>
+
+      <!-- Mosaico (se llena dinámicamente desde img/portfolio) -->
+      <div class="masonry" id="masonry"></div>
+    </section>
+
+    <section id="contacto" class="contact card">
+      <h3>Contacto</h3>
+      <p class="links">
+        <a class="contact-item" href="mailto:lavejart@gmail.com">
+          <img src="img/email.png" alt="Email" class="icon" />
+          lavejart@gmail.com
+        </a>
+        <a class="contact-item" href="https://instagram.com/lavejart" target="_blank" rel="noopener">
+          <img src="img/instagram.png" alt="Instagram" class="icon" />
+          @lavejart
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 LAVEJART — Laura Vélez Jaramillo</p>
+  </footer>
+
+  <!-- Visor -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Cerrar">×</button>
+    <img id="lightbox-img" alt="Vista previa de la obra" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
