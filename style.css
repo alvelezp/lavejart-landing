@@ -1,19 +1,23 @@
 :root{
   --bg:#0b0a10; --text:#f7f8fb; --muted:#cfd2dc; --card:#151523;
+  --page-bg:#2832f1; /* general yellow background */
+  --header-bg:#1c1325;
   --a1:#ff3d81; --a2:#ffb703; --a3:#00d1ff; --a4:#7cff4d; --a5:#7b2cbf;
   --r:18px;
 }
 *{box-sizing:border-box} html,body{height:100%}
 body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text);
-  /* Static, colorful background */
-  background:
-    radial-gradient(45vmax 45vmax at 12% 12%, rgba(255,61,129,.35) 0 40%, transparent 70%),
-    radial-gradient(38vmax 38vmax at 85% 15%, rgba(0,209,255,.35) 0 40%, transparent 70%),
-    radial-gradient(46vmax 46vmax at 30% 90%, rgba(255,183,3,.35) 0 40%, transparent 70%),
-    radial-gradient(36vmax 36vmax at 90% 80%, rgba(124,255,77,.30) 0 40%, transparent 70%),
-    radial-gradient(30vmax 30vmax at 55% 55%, rgba(123,44,191,.30) 0 40%, transparent 70%),
-    var(--bg);
+  /* Solid yellow background + subtle bicycle and grid pattern */
+  background-color: var(--page-bg);
+  background-image:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), /* dims bikes for contrast */
+    url('img/bikes.svg'),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.012) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.012) 0 1px, transparent 1px 48px);
+  background-size: auto, 100px auto, 48px 48px, 48px 48px;
+  background-position: center, center, center, center;
   background-attachment: fixed;
+  background-blend-mode: multiply, normal, normal, normal;
   overflow-x:hidden}
 
 /* Links: no underline globally */
@@ -33,10 +37,13 @@ a:hover{ text-decoration: none }
 .sparkle{position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.18}
 
 /* Topbar */
-.topbar{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem clamp(1rem,3vw,2rem)}
+.topbar{display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem clamp(1rem,3vw,2rem);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.08); backdrop-filter:blur(6px);
+  box-shadow:0 12px 28px rgba(0,0,0,.2)}
 .brand{display:flex; gap:1rem; align-items:center}
-/* Stack logo and subtitle vertically, tight spacing */
-.brand-text{display:flex; flex-direction:column; align-items:flex-start; gap:.15rem}
+/* Logo and subtitle side-by-side */
+.brand-text{display:flex; flex-direction:row; align-items:center; gap:.6rem}
 .logo{width:clamp(160px, 24vw, 260px); filter:drop-shadow(0 6px 18px rgba(0,0,0,.45))}
 .brand-text .subtitle{margin:0; color:var(--muted)}
 .nav a{color:var(--text); text-decoration:none; padding:.55rem .9rem; border-radius:999px; transition:.2s}
@@ -48,6 +55,7 @@ a:hover{ text-decoration: none }
 /* Hero */
 .hero{text-align:center; padding:clamp(2.2rem,6vw,5rem) 1rem}
 .hero h2{font-size:clamp(2rem,6vw,3.2rem); margin:.2rem 0 1rem; text-shadow:0 6px 24px rgba(0,0,0,.25)}
+.hero h3{font-weight:300; font-size:clamp(1.4rem,4vw,2.0rem); margin:.2rem 0 1.2rem}
 .hero p{max-width:60ch; margin:0 auto 1.2rem; color:var(--muted)}
 .btn{display:inline-block; padding:.9rem 1.15rem; border-radius:14px; font-weight:800; text-decoration:none; color:#111;
   background-image:linear-gradient(135deg,var(--a1),var(--a2),var(--a3)); box-shadow:0 10px 28px rgba(0,0,0,.28)}
